@@ -222,10 +222,3 @@ pytest tests/
 tail -f logs/rag.log
 ```
 
-## Licencia
-
-[Tu licencia aquí]
-
-## Contribuciones
-
-Las contribuciones son bienvenidas. Por favor abre un issue primero para discutir cambios mayores.
