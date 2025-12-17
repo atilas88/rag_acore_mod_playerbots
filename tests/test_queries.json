@@ -1,0 +1,40 @@
+{
+  "test_queries": [
+    {
+      "query": "¿Cómo configuro que los bots usen pociones automáticamente?",
+      "type": "configuration",
+      "expected_keywords": ["potion", "config", "AiPlayerbot"],
+      "expected_files": ["playerbot.conf"]
+    },
+    {
+      "query": "Error: el bot no sigue al jugador",
+      "type": "debugging",
+      "expected_keywords": ["follow", "movement", "FollowAction"],
+      "expected_files": ["FollowAction.cpp"]
+    },
+    {
+      "query": "¿Cómo implemento un nuevo comando para los bots?",
+      "type": "implementation",
+      "expected_keywords": ["command", "handler", "ChatHandler"],
+      "expected_files": ["PlayerbotAI.cpp"]
+    },
+    {
+      "query": "¿Qué es PlayerbotAI y cómo funciona?",
+      "type": "explanation",
+      "expected_keywords": ["PlayerbotAI", "class", "bot", "ai"],
+      "expected_files": ["PlayerbotAI.h"]
+    },
+    {
+      "query": "¿Cómo configuro el nivel de los bots?",
+      "type": "configuration",
+      "expected_keywords": ["level", "bot", "config"],
+      "expected_files": ["playerbot.conf"]
+    },
+    {
+      "query": "Los bots no atacan en combate",
+      "type": "debugging",
+      "expected_keywords": ["combat", "attack", "CombatStrategy"],
+      "expected_files": ["CombatAction.cpp"]
+    }
+  ]
+}
