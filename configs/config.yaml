@@ -1,34 +1,34 @@
-# Configuración del RAG AzerothCore
+# AzerothCore RAG Configuration
 raw_data_path: "./data/raw"
 processed_data_path: "./data/processed"
 embeddings_path: "./data/embeddings"
 
-# Configuración de chunking
+# Chunking configuration
 chunking:
   chunk_size: 1000
   overlap: 200
   min_chunk_size: 100
 
-# Configuración de embeddings
+# Embeddings configuration
 embedding:
   model_name: "all-MiniLM-L6-v2"
   dimension: 384
   batch_size: 32
 
-# Configuración de búsqueda
+# Search configuration
 search:
   top_k: 5
   hybrid_alpha: 0.6
   use_reranking: false
   rerank_top_n: 10
 
-# Configuración de Claude
+# Claude configuration
 claude:
   model: "claude-sonnet-4-20250514"
   max_tokens: 4000
   temperature: 0.7
 
-# Configuración de caché
+# Cache configuration
 cache:
   enabled: true
   ttl_days: 7

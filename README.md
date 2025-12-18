@@ -1,76 +1,76 @@
 # RAG AzerothCore
 
-Sistema de Retrieval-Augmented Generation (RAG) especializado en documentación de AzerothCore y mod-playerbots, usando Claude como modelo de lenguaje.
+Retrieval-Augmented Generation (RAG) system specialized in AzerothCore and mod-playerbots documentation, using Claude as the language model.
 
-## Características
+## Features
 
-- **Búsqueda híbrida**: Combina búsqueda semántica (embeddings) con búsqueda por keywords (BM25)
-- **Chunking inteligente**: Divide documentos según su tipo (C++, Markdown, configs)
-- **Metadata enriquecida**: Extrae información útil de cada documento
-- **Caché de respuestas**: Acelera queries repetidas
-- **Prompts especializados**: Diferentes prompts según el tipo de pregunta
-- **Monitoreo y métricas**: Tracking de performance y uso
+- **Hybrid search**: Combines semantic search (embeddings) with keyword search (BM25)
+- **Intelligent chunking**: Splits documents based on their type (C++, Markdown, configs)
+- **Enriched metadata**: Extracts useful information from each document
+- **Response caching**: Speeds up repeated queries
+- **Specialized prompts**: Different prompts based on question type
+- **Monitoring and metrics**: Performance and usage tracking
 
-## Estructura del Proyecto
+## Project Structure
 
 ```
 azerothcore-rag/
 ├── src/
-│   ├── preprocessing/      # Carga y procesamiento de documentos
-│   ├── indexing/          # Embeddings y búsqueda vectorial
-│   ├── retrieval/         # Recuperación de información
-│   ├── generation/        # Generación con Claude
-│   ├── config.py          # Configuración
-│   ├── pipeline.py        # Pipeline principal
-│   ├── cache.py           # Sistema de caché
-│   └── monitor.py         # Monitoreo
+│   ├── preprocessing/      # Document loading and processing
+│   ├── indexing/          # Embeddings and vector search
+│   ├── retrieval/         # Information retrieval
+│   ├── generation/        # Claude generation
+│   ├── config.py          # Configuration
+│   ├── pipeline.py        # Main pipeline
+│   ├── cache.py           # Cache system
+│   └── monitor.py         # Monitoring
 ├── data/
-│   ├── raw/              # Documentación original
-│   ├── processed/        # Documentos procesados
-│   ├── embeddings/       # Índices vectoriales
-│   └── cache/            # Caché de respuestas
+│   ├── raw/              # Original documentation
+│   ├── processed/        # Processed documents
+│   ├── embeddings/       # Vector indexes
+│   └── cache/            # Response cache
 ├── configs/
-│   └── config.yaml       # Configuración principal
+│   └── config.yaml       # Main configuration
 ├── scripts/
-│   ├── build_index.py    # Construir índice
-│   ├── update_index.py   # Actualizar índice
-│   └── evaluate.py       # Evaluar sistema
+│   ├── build_index.py    # Build index
+│   ├── update_index.py   # Update index
+│   └── evaluate.py       # Evaluate system
 ├── tests/
-│   └── test_queries.json # Queries de prueba
-├── main.py               # Aplicación principal
-└── requirements.txt      # Dependencias
+│   └── test_queries.json # Test queries
+├── main.py               # Main application
+└── requirements.txt      # Dependencies
 ```
 
-## Instalación
+## Installation
 
-### 1. Clonar el repositorio
+### 1. Clone the repository
 
 ```bash
-git clone <tu-repo>
+git clone <your-repo>
 cd azerothcore-rag
 ```
 
-### 2. Crear entorno virtual
+### 2. Create virtual environment
 
 ```bash
 python3 -m venv venv
-source venv/bin/activate  # En Windows: venv\Scripts\activate
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-### 3. Instalar dependencias
+### 3. Install dependencies
 
 ```bash
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-### 4. Configurar API Key de Anthropic
+### 4. Configure Anthropic API Key
 
 ```bash
-export ANTHROPIC_API_KEY='tu-api-key-aqui'
+export ANTHROPIC_API_KEY='your-api-key-here'
 ```
 
-### 5. Descargar documentación de AzerothCore
+### 5. Download AzerothCore documentation
 
 ```bash
 cd data/raw
@@ -78,88 +78,88 @@ git clone https://github.com/azerothcore/azerothcore-wotlk.git
 cd ../..
 ```
 
-## Uso
+## Usage
 
-### Construir el índice
+### Build the index
 
-Primera vez (construye índice desde cero):
+First time (builds index from scratch):
 
 ```bash
 python scripts/build_index.py
 ```
 
-Este proceso:
-1. Carga documentos desde `data/raw/`
-2. Los limpia y divide en chunks
-3. Genera embeddings
-4. Construye índice vectorial y BM25
-5. Guarda todo en `data/embeddings/`
+This process:
+1. Loads documents from `data/raw/`
+2. Cleans and splits them into chunks
+3. Generates embeddings
+4. Builds vector and BM25 indexes
+5. Saves everything to `data/embeddings/`
 
-### Ejecutar el sistema
+### Run the system
 
 ```bash
 python main.py
 ```
 
-Comandos disponibles:
-- `/help` - Muestra ayuda
-- `/stats` - Estadísticas del sistema
-- `/cache` - Información del caché
-- `/clear` - Limpiar caché
-- `/filters` - Configurar filtros de búsqueda
-- `/exit` - Salir
+Available commands:
+- `/help` - Show help
+- `/stats` - System statistics
+- `/cache` - Cache information
+- `/clear` - Clear cache
+- `/filters` - Configure search filters
+- `/exit` - Exit
 
-### Ejemplo de uso
+### Usage example
 
 ```
-💬 Tu pregunta: ¿Cómo configuro que los bots usen pociones?
+💬 Your question: How do I configure bots to use potions?
 
-🔍 Buscando información...
+🔍 Searching information...
 
 ======================================================================
-💡 RESPUESTA:
+💡 ANSWER:
 ======================================================================
 
-Para configurar que los bots usen pociones automáticamente en AzerothCore
-con mod-playerbots, necesitas modificar el archivo de configuración...
+To configure bots to automatically use potions in AzerothCore
+with mod-playerbots, you need to modify the configuration file...
 
-[resto de la respuesta]
+[rest of the answer]
 ======================================================================
 ```
 
-### Actualizar el índice
+### Update the index
 
-Para actualizar con documentación nueva:
+To update with new documentation:
 
 ```bash
 python scripts/update_index.py
 ```
 
-### Evaluar el sistema
+### Evaluate the system
 
 ```bash
 python scripts/evaluate.py
 ```
 
-## Configuración
+## Configuration
 
-Edita `configs/config.yaml` para ajustar:
+Edit `configs/config.yaml` to adjust:
 
-- **Chunking**: Tamaño de chunks, overlap
-- **Embeddings**: Modelo, dimensión, batch size
-- **Búsqueda**: Top K, balance híbrido (alpha)
-- **Claude**: Modelo, temperatura, max tokens
-- **Caché**: Habilitado, TTL
+- **Chunking**: Chunk size, overlap
+- **Embeddings**: Model, dimension, batch size
+- **Search**: Top K, hybrid balance (alpha)
+- **Claude**: Model, temperature, max tokens
+- **Cache**: Enabled, TTL
 
-## Estructura de Datos
+## Data Structure
 
 ### Chunks
 
-Los documentos se dividen en chunks con metadata:
+Documents are split into chunks with metadata:
 
 ```python
 {
-    'content': 'texto del chunk',
+    'content': 'chunk text',
     'chunk_index': 0,
     'metadata': {
         'filename': 'PlayerbotAI.cpp',
@@ -174,51 +174,50 @@ Los documentos se dividen en chunks con metadata:
 }
 ```
 
-### Búsqueda Híbrida
+### Hybrid Search
 
-El sistema combina:
-- **Búsqueda semántica** (embeddings): Captura significado
-- **Búsqueda por keywords** (BM25): Encuentra términos exactos
+The system combines:
+- **Semantic search** (embeddings): Captures meaning
+- **Keyword search** (BM25): Finds exact terms
 
-Balance controlado por `hybrid_alpha` (0.0 = solo keywords, 1.0 = solo semántica)
+Balance controlled by `hybrid_alpha` (0.0 = keywords only, 1.0 = semantic only)
 
 ## Troubleshooting
 
-### Error: No se encuentra el índice
+### Error: Index not found
 
 ```bash
 python scripts/build_index.py
 ```
 
-### Error: API Key no configurada
+### Error: API Key not configured
 
 ```bash
-export ANTHROPIC_API_KEY='tu-key'
+export ANTHROPIC_API_KEY='your-key'
 ```
 
-### Respuestas de baja calidad
+### Low quality responses
 
-1. Aumenta `top_k` en config.yaml
-2. Ajusta `hybrid_alpha`
-3. Usa filtros específicos (`/filters`)
+1. Increase `top_k` in config.yaml
+2. Adjust `hybrid_alpha`
+3. Use specific filters (`/filters`)
 
-### Performance lento
+### Slow performance
 
-1. Habilita caché (`cache.enabled: true`)
+1. Enable cache (`cache.enabled: true`)
 2. Reduce `chunk_size`
-3. Ajusta `batch_size`
+3. Adjust `batch_size`
 
-## Desarrollo
+## Development
 
-### Ejecutar tests
+### Run tests
 
 ```bash
 pytest tests/
 ```
 
-### Ver logs
+### View logs
 
 ```bash
 tail -f logs/rag.log
 ```
-
