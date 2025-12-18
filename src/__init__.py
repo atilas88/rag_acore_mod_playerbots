@@ -1,7 +1,7 @@
 # src/__init__.py
 """
-AzerothCore RAG - Sistema de Retrieval-Augmented Generation
-para documentación de AzerothCore y mod-playerbots
+AzerothCore RAG - Retrieval-Augmented Generation System
+for AzerothCore and mod-playerbots documentation
 """
 
 __version__ = "1.0.0"

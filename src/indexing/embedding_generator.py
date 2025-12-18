@@ -1,6 +1,6 @@
 # src/indexing/embedding_generator.py
 """
-Genera embeddings vectoriales para chunks de texto
+Generates vector embeddings for text chunks
 """
 
-# TODO: Implementar EmbeddingGenerator
+# TODO: Implement EmbeddingGenerator

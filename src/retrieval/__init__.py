@@ -1,6 +1,6 @@
 # src/retrieval/__init__.py
 """
-Módulo de retrieval (recuperación de información)
+Retrieval (information retrieval) module
 """
 
 __all__ = []

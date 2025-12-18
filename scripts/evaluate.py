@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # scripts/evaluate.py
 """
-Script para evaluar la calidad del sistema RAG
+Script to evaluate the RAG system quality
 """
 
-# TODO: Implementar script de evaluación
+# TODO: Implement evaluation script

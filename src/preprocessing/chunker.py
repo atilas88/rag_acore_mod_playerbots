@@ -1,6 +1,6 @@
 # src/preprocessing/chunker.py
 """
-Divide documentos en chunks inteligentes según su tipo
+Splits documents into intelligent chunks based on their type
 """
 
-# TODO: Implementar SmartChunker
+# TODO: Implement SmartChunker

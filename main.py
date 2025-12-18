@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # main.py
 """
-Aplicación principal - Interfaz interactiva del RAG
+Main application - Interactive RAG interface
 """
 
-# TODO: Implementar aplicación principal interactiva
+# TODO: Implement interactive main application

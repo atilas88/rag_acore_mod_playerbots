@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # scripts/build_index.py
 """
-Script para construir el índice del RAG desde cero
+Script to build the RAG index from scratch
 """
 
-# TODO: Implementar script de construcción de índice
+# TODO: Implement index building script

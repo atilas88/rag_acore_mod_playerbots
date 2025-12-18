@@ -1,6 +1,6 @@
 # src/generation/__init__.py
 """
-Módulo de generación de respuestas con Claude
+Response generation module with Claude
 """
 
 from .claude_client import ClaudeClient

@@ -1,6 +1,6 @@
 # src/monitor.py
 """
-Monitoreo y logging del sistema RAG
+Monitoring and logging for the RAG system
 """
 
-# TODO: Implementar RAGMonitor
+# TODO: Implement RAGMonitor

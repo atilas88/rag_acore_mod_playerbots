@@ -1,6 +1,6 @@
 # src/indexing/vector_store.py
 """
-Almacena y busca vectores usando FAISS
+Stores and searches vectors using FAISS
 """
 
-# TODO: Implementar VectorStore
+# TODO: Implement VectorStore

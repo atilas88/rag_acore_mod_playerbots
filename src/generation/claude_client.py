@@ -1,6 +1,6 @@
 # src/generation/claude_client.py
 """
-Cliente para interactuar con la API de Claude
+Client to interact with Claude's API
 """
 
-# TODO: Implementar ClaudeClient
+# TODO: Implement ClaudeClient

@@ -1,6 +1,6 @@
 # src/preprocessing/document_cleaner.py
 """
-Limpia y normaliza documentos
+Cleans and normalizes documents
 """
 
-# TODO: Implementar DocumentCleaner
+# TODO: Implement DocumentCleaner

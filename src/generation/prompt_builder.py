@@ -1,6 +1,6 @@
 # src/generation/prompt_builder.py
 """
-Construye prompts especializados según tipo de query
+Builds specialized prompts based on query type
 """
 
-# TODO: Implementar PromptBuilder
+# TODO: Implement PromptBuilder

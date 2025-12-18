@@ -1,6 +1,6 @@
 # src/indexing/__init__.py
 """
-Módulo de indexing y búsqueda vectorial
+Indexing and vector search module
 """
 
 from .embedding_generator import EmbeddingGenerator

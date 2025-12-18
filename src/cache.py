@@ -1,6 +1,6 @@
 # src/cache.py
 """
-Sistema de caché para queries y respuestas
+Cache system for queries and responses
 """
 
-# TODO: Implementar RAGCache
+# TODO: Implement RAGCache

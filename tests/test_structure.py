@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # tests/test_structure.py
 """
-Tests para verificar que la estructura del proyecto está correcta
+Tests to verify that the project structure is correct
 """
 
 import os
@@ -9,7 +9,7 @@ import sys
 from pathlib import Path
 
 def test_project_structure():
-    """Verifica que todos los directorios existen"""
+    """Verifies that all directories exist"""
     base_dir = Path(__file__).parent.parent
 
     required_dirs = [
@@ -31,13 +31,13 @@ def test_project_structure():
 
     for dir_path in required_dirs:
         full_path = base_dir / dir_path
-        assert full_path.exists(), f"Directorio faltante: {dir_path}"
-        assert full_path.is_dir(), f"No es un directorio: {dir_path}"
+        assert full_path.exists(), f"Missing directory: {dir_path}"
+        assert full_path.is_dir(), f"Not a directory: {dir_path}"
 
-    print("✅ Todos los directorios existen")
+    print("✅ All directories exist")
 
 def test_required_files():
-    """Verifica que los archivos esenciales existen"""
+    """Verifies that essential files exist"""
     base_dir = Path(__file__).parent.parent
 
     required_files = [
@@ -57,13 +57,13 @@ def test_required_files():
 
     for file_path in required_files:
         full_path = base_dir / file_path
-        assert full_path.exists(), f"Archivo faltante: {file_path}"
-        assert full_path.is_file(), f"No es un archivo: {file_path}"
+        assert full_path.exists(), f"Missing file: {file_path}"
+        assert full_path.is_file(), f"Not a file: {file_path}"
 
-    print("✅ Todos los archivos esenciales existen")
+    print("✅ All essential files exist")
 
 def test_python_modules():
-    """Verifica que los módulos Python tienen __init__.py"""
+    """Verifies that Python modules have __init__.py"""
     base_dir = Path(__file__).parent.parent
 
     python_modules = [
@@ -78,12 +78,12 @@ def test_python_modules():
 
     for module_path in python_modules:
         init_file = base_dir / module_path / '__init__.py'
-        assert init_file.exists(), f"Falta __init__.py en: {module_path}"
+        assert init_file.exists(), f"Missing __init__.py in: {module_path}"
 
-    print("✅ Todos los módulos tienen __init__.py")
+    print("✅ All modules have __init__.py")
 
 if __name__ == "__main__":
-    print("\n🧪 VERIFICANDO ESTRUCTURA DEL PROYECTO")
+    print("\n🧪 VERIFYING PROJECT STRUCTURE")
     print("="*70)
 
     try:
@@ -92,7 +92,7 @@ if __name__ == "__main__":
         test_python_modules()
 
         print("="*70)
-        print("✅ ESTRUCTURA DEL PROYECTO CORRECTA\n")
+        print("✅ PROJECT STRUCTURE CORRECT\n")
 
     except AssertionError as e:
         print(f"\n❌ ERROR: {e}\n")

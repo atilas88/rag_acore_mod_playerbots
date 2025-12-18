@@ -1,6 +1,6 @@
 # src/preprocessing/__init__.py
 """
-Módulo de preprocesamiento de documentos
+Document preprocessing module
 """
 
 from .document_loader import DocumentLoader

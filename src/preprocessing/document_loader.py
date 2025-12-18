@@ -1,6 +1,6 @@
 # src/preprocessing/document_loader.py
 """
-Carga y procesa documentos desde el sistema de archivos
+Loads and processes documents from the file system
 """
 
-# TODO: Implementar DocumentLoader
+# TODO: Implement DocumentLoader

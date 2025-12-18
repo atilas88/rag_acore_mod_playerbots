@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # scripts/update_index.py
 """
-Script para actualizar el índice incrementalmente
+Script to update the index incrementally
 """
 
-# TODO: Implementar script de actualización incremental
+# TODO: Implement incremental update script

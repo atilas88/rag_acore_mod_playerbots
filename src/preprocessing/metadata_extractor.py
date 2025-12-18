@@ -1,6 +1,6 @@
 # src/preprocessing/metadata_extractor.py
 """
-Extrae metadata útil de documentos
+Extracts useful metadata from documents
 """
 
-# TODO: Implementar MetadataExtractor
+# TODO: Implement MetadataExtractor

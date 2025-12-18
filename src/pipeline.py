@@ -1,7 +1,7 @@
 # src/pipeline.py
 """
-Pipeline principal del sistema RAG
-Integra todos los componentes: preprocessing, indexing, retrieval, generation
+Main pipeline for the RAG system
+Integrates all components: preprocessing, indexing, retrieval, generation
 """
 
-# TODO: Implementar RAGPipeline
+# TODO: Implement RAGPipeline

@@ -1,6 +1,6 @@
 # src/config.py
 """
-Módulo de configuración del sistema RAG
+RAG system configuration module
 """
 
 from dataclasses import dataclass
@@ -67,7 +67,7 @@ class Config:
     
     @classmethod
     def from_yaml(cls, path: str) -> 'Config':
-        """Carga configuración desde archivo YAML"""
+        """Load configuration from YAML file"""
         with open(path, 'r') as f:
             data = yaml.safe_load(f)
         
