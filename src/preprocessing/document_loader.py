@@ -34,7 +34,7 @@ class DocumentLoader:
         
         for root, dirs, files in os.walk(directory):
             dirs[:] = [d for d in dirs if d not in {
-                '.git', 'node_modules', '__pycache__', 'build', '.vscode'
+                '.git', '__pycache__', 'build', '.vscode'
             }]
             
             for file in files:
