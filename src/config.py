@@ -3,7 +3,7 @@
 RAG system configuration module
 """
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 import yaml
 
@@ -44,27 +44,15 @@ class Config:
     processed_data_path: str = "./data/processed"
     embeddings_path: str = "./data/embeddings"
     
-    chunking: ChunkingConfig | None = None
-    embedding: EmbeddingConfig | None = None
-    search: SearchConfig | None = None
-    claude: ClaudeConfig | None = None
-    cache: CacheConfig | None = None
+    chunking: ChunkingConfig = field(default_factory=ChunkingConfig)
+    embedding: EmbeddingConfig = field(default_factory=EmbeddingConfig)
+    search: SearchConfig = field(default_factory=SearchConfig)
+    claude: ClaudeConfig = field(default_factory=ClaudeConfig)
+    cache: CacheConfig = field(default_factory=CacheConfig)
     
     log_level: str = "INFO"
     log_file: str = "./logs/rag.log"
-    
-    def __post_init__(self):
-        if self.chunking is None:
-            self.chunking = ChunkingConfig()
-        if self.embedding is None:
-            self.embedding = EmbeddingConfig()
-        if self.search is None:
-            self.search = SearchConfig()
-        if self.claude is None:
-            self.claude = ClaudeConfig()
-        if self.cache is None:
-            self.cache = CacheConfig()
-    
+
     @classmethod
     def from_yaml(cls, path: str) -> 'Config':
         """Load configuration from YAML file"""
