@@ -74,11 +74,15 @@ class IncrementalUpdater:
         self.pipeline.vector_store.add_chunks(chunks_with_embeddings)
 
         print("📊 Rebuilding BM25 index...")
-        self.pipeline.hybrid_search.build_bm25_index()
+        if self.pipeline.hybrid_search:
+            self.pipeline.hybrid_search.build_bm25_index()
+        else:
+            print("⚠️  Hybrid search not initialized, skipping BM25 rebuild")
+            return
 
         print("💾 Saving updated index...")
         self.pipeline.vector_store.save(self.pipeline.config.embeddings_path)
-        
+
         import pickle
         bm25_path = os.path.join(self.pipeline.config.embeddings_path, "bm25.pkl")
         with open(bm25_path, 'wb') as f:
